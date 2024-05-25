@@ -1,7 +1,7 @@
-package com.example.springboot.service;
+package com.example.Application.springboot.service;
 
-import com.example.springboot.bean.Subject;
-import com.example.springboot.repository.SubjectRepo;
+import com.example.Application.springboot.Entity.Subject;
+import com.example.Application.springboot.repository.SubjectRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,11 +21,12 @@ public class SubjectService {
         subjectRepo.save(subject);
     }
 
-    public void updateSubject(String id, Subject subject) {
+    public void updateSubject(Long id, Subject subject) {
         subjectRepo.save(subject);
     }
 
-    public void deleteSubjects(String id) {
+    public void deleteSubjects(Long id) {
         subjectRepo.deleteById(id);
     }
+
 }
