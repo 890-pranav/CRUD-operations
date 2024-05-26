@@ -3,10 +3,13 @@ package com.example.Application.springboot.Entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="subjects")
+@Table(name="Applicants")
 public class Subject {
 
     @Column()
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long Number;
     private String applicant_Name;
     private String gender;
     private String district;
@@ -14,8 +17,6 @@ public class Subject {
     private String pincode;
     private String ownership;
     private String govtID_Type;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long ID_Number;
     private String category;
     private String load_Applied;
@@ -26,11 +27,12 @@ public class Subject {
     private String reviewer_Name;
     private String reviewer_Comments;
 
-    public Subject() {
+    public Subject(){
 
     }
 
-    public Subject(String applicant_Name, String gender, String district, String state, String pincode, String ownership, String govtID_Type, Long ID_Number, String category, String load_Applied, String date_of_Approval, String modified_Date, String status, String reviewer_ID, String reviewer_Name, String reviewer_Comments) {
+    public Subject(Long number, String applicant_Name, String gender, String district, String state, String pincode, String ownership, String govtID_Type, Long ID_Number, String category, String load_Applied, String date_of_Approval, String modified_Date, String status, String reviewer_ID, String reviewer_Name, String reviewer_Comments) {
+        this.Number = number;
         this.applicant_Name = applicant_Name;
         this.gender = gender;
         this.district = district;
@@ -48,7 +50,9 @@ public class Subject {
         this.reviewer_Name = reviewer_Name;
         this.reviewer_Comments = reviewer_Comments;
     }
+    public Long getNumber(){ return Number;}
 
+    public void setNumber(Long Number){ this.Number = Number;}
     public String getapplicant_Name() {
         return applicant_Name;
     }

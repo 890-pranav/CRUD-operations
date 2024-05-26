@@ -17,23 +17,25 @@ public class SubjectController {
         return subjectService.getAllSubjects();
     }
 
+    @RequestMapping(method = RequestMethod.GET , value = "/ID_subjects/{Id_Number}")
+    public List<Subject> getSubjectById(@PathVariable Long Id_Number){
+        return subjectService.getSubjectById(Id_Number);
+    }
+
     @RequestMapping(method = RequestMethod.POST , value = "/Add_subjects")
     public void addSubject(@RequestBody Subject subject){
         subjectService.addSubject(subject);
     }
 
     @RequestMapping(method = RequestMethod.PUT , value = "/Update_subjects")
-    public void updateSubject(@PathVariable Long Id, @RequestBody Subject subject){
-        subjectService.updateSubject(Id,subject);
+    public void updateSubject(@PathVariable Long Id_Number, @RequestBody Subject subject){
+        subjectService.updateSubject(Id_Number,subject);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE , value = "/Delete_Subjects")
-    public void deleteSubject(@PathVariable Long Id){
-        subjectService.deleteSubjects(Id);
+    @RequestMapping(method = RequestMethod.DELETE , value = "/Delete_Subjects/{Number}")
+    public void deleteSubject(@PathVariable Long Number){
+        subjectService.deleteSubjects(Number);
     }
 
-    public void getSubjectsByName(@RequestBody Subject subject){
-        subjectService.getSubjectsByName(subject);
-    }
 }
 

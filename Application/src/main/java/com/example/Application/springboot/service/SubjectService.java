@@ -12,10 +12,9 @@ public class SubjectService {
     @Autowired
     public SubjectRepo subjectRepo;
     public List<Subject> getAllSubjects(){
-        List<Subject> subjects= new ArrayList<>();
-        subjectRepo.findAll().forEach(subjects::add);
-        return subjects;
+        return (List<Subject>) this.subjectRepo.findAll();
     }
+
 
     public void addSubject(Subject subject) {
         subjectRepo.save(subject);
@@ -25,8 +24,14 @@ public class SubjectService {
         subjectRepo.save(subject);
     }
 
-    public void deleteSubjects(Long id) {
-        subjectRepo.deleteById(id);
+    public void deleteSubjects(Long Number) {
+        subjectRepo.deleteById(Number);
+        System.out.println("Successfully deleted By Number :" + String.valueOf(Number));
     }
 
+    public List<Subject> getSubjectById(Long Id) {
+        List<Subject> subjects= new ArrayList<>();
+        subjectRepo.findById(Id);
+        return subjects;
+    }
 }
