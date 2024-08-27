@@ -1,10 +1,7 @@
-package com.example.Application.springboot;
+package com.example.Application;
 
-import com.example.Application.springboot.Entity.Subject;
-import org.apache.catalina.core.ApplicationContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 @SpringBootApplication

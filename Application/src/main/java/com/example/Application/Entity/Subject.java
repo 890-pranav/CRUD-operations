@@ -1,34 +1,48 @@
-package com.example.Application.springboot.Entity;
+package com.example.Application.Entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name="Applicants")
 public class Subject {
-
-    @Column()
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Number;
+    @JsonProperty("Applicant_Name")
     private String applicant_Name;
+    @JsonProperty("Gender")
     private String gender;
+    @JsonProperty("District")
     private String district;
+    @JsonProperty("State")
     private String state;
+    @JsonProperty("Pincode")
     private String pincode;
+    @JsonProperty("Ownership")
     private String ownership;
+    @JsonProperty("GovtID_Type")
     private String govtID_Type;
+    @JsonProperty("ID_Number")
     private Long ID_Number;
+    @JsonProperty("Category")
     private String category;
+    @JsonProperty("Load_Applied_in_KV")
     private String load_Applied;
+    @JsonProperty("Date_of_Approval")
     private String date_of_Approval;
+    @JsonProperty("Modified_Date")
     private String modified_Date;
+    @JsonProperty("Status")
     private String status;
+    @JsonProperty("Reviewer_ID")
     private String reviewer_ID;
+    @JsonProperty("Reviewer_Name")
     private String reviewer_Name;
+    @JsonProperty("Reviewer_Comments")
     private String reviewer_Comments;
 
     public Subject(){
-
     }
 
     public Subject(Long number, String applicant_Name, String gender, String district, String state, String pincode, String ownership, String govtID_Type, Long ID_Number, String category, String load_Applied, String date_of_Approval, String modified_Date, String status, String reviewer_ID, String reviewer_Name, String reviewer_Comments) {

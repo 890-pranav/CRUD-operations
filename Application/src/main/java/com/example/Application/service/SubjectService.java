@@ -1,7 +1,7 @@
-package com.example.Application.springboot.service;
+package com.example.Application.service;
 
-import com.example.Application.springboot.Entity.Subject;
-import com.example.Application.springboot.repository.SubjectRepo;
+import com.example.Application.repository.SubjectRepo;
+import com.example.Application.Entity.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

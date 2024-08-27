@@ -1,7 +1,7 @@
-package com.example.Application.springboot.controller;
+package com.example.Application.controller;
 
-import com.example.Application.springboot.Entity.Subject;
-import com.example.Application.springboot.service.SubjectService;
+import com.example.Application.Entity.Subject;
+import com.example.Application.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +22,7 @@ public class SubjectController {
         return subjectService.getSubjectById(Id_Number);
     }
 
-    @RequestMapping(method = RequestMethod.POST , value = "/Add_subjects")
+    @RequestMapping(method = RequestMethod.GET , value = "/Add_subjects")
     public void addSubject(@RequestBody Subject subject){
         subjectService.addSubject(subject);
     }

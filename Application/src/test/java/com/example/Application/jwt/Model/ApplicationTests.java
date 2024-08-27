@@ -1,4 +1,4 @@
-package com.example.Application;
+package com.example.Application.jwt.Model;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
